@@ -39,6 +39,7 @@ import { EnemyEntryComponent } from './enemy-entry.component';
       }
       @if (compConfig.inheritElems.length) {
         <app-demon-inherits
+          [lang]="lang"
           [hasChance]="!compConfig.hasManualInheritance"
           [inheritHeaders]="compConfig.inheritElems"
           [inherits]="demon.affinities">

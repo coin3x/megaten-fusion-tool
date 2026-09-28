@@ -12,6 +12,7 @@ import { Demon, CompendiumConfig } from '../models';
   imports: [CommonModule, DemonStatsComponent, DemonResistsComponent, DemonSkillsComponent],
   template: `
     <app-demon-stats
+      [lang]="lang"
       [title]="'Lvl ' + demon.lvl + ' ' + demon.race + ' ' + demon.name"
       [statHeaders]="compConfig.enemyStats.concat(compConfig.enemyGrowths)"
       [fusionHeaders]="['Location']"
@@ -41,12 +42,14 @@ import { Demon, CompendiumConfig } from '../models';
       </table>
     }
     <app-demon-resists
+      [lang]="lang"
       [resistHeaders]="compConfig.resistElems"
       [resists]="demon.resists"
       [ailmentHeaders]="compConfig.ailmentElems"
       [ailments]="demon.ailments">
     </app-demon-resists>
     <app-demon-skills
+      [lang]="lang"
       [hasTarget]="true"
       [hasLvl]="false"
       [elemOrder]="compConfig.elemOrder"

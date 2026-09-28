@@ -108,7 +108,7 @@ const KO_RESIST_LVLS = [
 export class ReslvlToStringLocalePipe implements PipeTransform {
   transform(value: number, lang: string): string {
     const resLvl = value >> 10;
-    if (lang === 'ja') { return JA_RESIST_LVLS[resLvl]; }
+    if (lang === 'ja' || lang === 'zh-hant') { return JA_RESIST_LVLS[resLvl]; }
     if (lang === 'ko') { return KO_RESIST_LVLS[resLvl]; }
     return resLvl < 12 ? RESIST_LVLS[resLvl] : RESIST_NUMS[resLvl - 12][value & 0x3FF];
   }
